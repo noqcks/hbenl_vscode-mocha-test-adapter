@@ -192,7 +192,7 @@ export class TestLog implements ILog {
 
 async function findFiles(glob: string): Promise<string[]> {
 	return new Promise<string[]>((resolve, reject) => {
-		new Glob(glob, (err, files) => {
+		new Glob(glob, {}, (err, files) => {
 			if (err) {
 				reject(err);
 			} else {
